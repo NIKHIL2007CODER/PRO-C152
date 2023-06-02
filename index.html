@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+
+  <script src="Log.js"></script>
+  <script src="Box.js"></script>
+
+</head>
+
+<body>
+
+  <a-scene background="color:#000000">
+
+    <a-camera position="0 1.6 0" camera-zoom-out>
+
+    </a-camera>
+
+    <a-entity log="Hi, it's me!"></a-entity>
+
+    <a-entity position="0 0 0" rotation="0 0 0" move-box>
+
+      <a-box>
+
+      </a-box>
+
+    </a-entity>
+
+    <a-entity id = "rocket" position = "0 0 0" rotation = "0 0 0" move>
+      <a-cone position = "0 1.5 0" color = "red" radius-bottom = "0.5" radius-top = "0.1" id = "part1"></a-cone>
+      <a-triangle position = "-1.3 -2 -1" color = "white" vertex-a = "1 1 1" vertex-b = "1 3 1" vertex-c = "-1 1 1" ></a-triangle>
+      <a-triangle position = "-0.7.5 0 -1" color = "white" rotation = "0 0 270" vertex-a = "1 1 1" vertex-b = "1 3 1" vertex-c = "-1 1 1" ></a-triangle>
+      <a-cylinder position = "0 -1 0" color = "white" radius ="0.5" height = "4" id = "part2"></a-cylinder>
+      <a-cylinder position ="0 -3.8 0" color = "blue" radius = "0.5" height = "1.5" id = "part3" fall-down rotate-cone>
+        <a-triangle position = "-1.3 -2 -1" color = "white" vertex-a = "1 1 1" vertex-b = "1 3 1" vertex-c = "-1 1 1" ></a-triangle>
+        <a-triangle position = "-0.7.5 0 -1" color = "white" rotation = "0 0 270" vertex-a = "1 1 1" vertex-b = "1 3 1" vertex-c = "-1 1 1" ></a-triangle>
+      </a-cylinder>
+    </a-entity>
+
+    <a-entity position = "0 0 0" rotation = "0 0 0" animation = "property:rotation ; to:0 360 0 ; easing:linear ; loop:true ; dur:10000">
+      <a-sphere position = "0 -10 0" radius = "7" src = "./earth.jpg"></a-sphere>
+    </a-entity>
+
+  </a-scene>
+
+</body>
+
+</html>
